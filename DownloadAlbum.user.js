@@ -3,7 +3,7 @@
 // @namespace   https://bandcamp.com
 // @match       https://bandcamp.com/download*
 // @description Downloads the item from the download page. Refreshes if there is an error.
-// @author      Ryan Bluth, Xerus2000
+// @author      Ryan Bluth, Xerus2000, Joost Flick
 // @version     1.1.1
 // @grant       none
 // ==/UserScript==
@@ -47,10 +47,11 @@
 
                 var titleLabel = document.getElementsByClassName('download-title')[0];
                 if (titleLabel.children[0].href !== undefined && titleLabel.children[0].href.length > 0) {
-                    window.open(titleLabel.children[0].href);
+                    window.open(titleLabel.children[0].href, "_self");
                     clearTimeout(interval);
                     if (closeAfterDownload) {
                         close();
+                        setTimeout(function() {close()}, 20000);
                     }
                 }
             }
