@@ -6,7 +6,7 @@ This chrome extension is needed for the scripts to work, so make sure you are us
 
 
 ## Usage
-1. Import [DownloadCollection](https://github.com/RyanBluth/Bandcamp-Greasy/raw/master/DownloadCollection.user.js) and [DownloadAlbum](https://github.com/RyanBluth/Bandcamp-Greasy/raw/master/DownloadAlbum.user.js) into Grease Monkey or Tamper Monkey by simply clicking the links (which should bring up the install dialog)
+1. Import [DownloadCollection](https://github.com/joostflick/cga-groovecollector/raw/master/DownloadCollection.user.js) and [DownloadAlbum](https://github.com/joostflick/cga-groovecollector/raw/master/DownloadAlbum.user.js) into Tamper Monkey by simply clicking the links (which should bring up the install dialog)
 2. Change the value of YOUR_USERNAME to your actual username in DownloadCollection.user.js
 3. Change the value of format to your desired format (MP3 320 is the default) in DownloadAlbum.user.js
   - Available formats are as follows...
@@ -18,6 +18,6 @@ This chrome extension is needed for the scripts to work, so make sure you are us
     - ALAC
     - WAV
     - AIFF
-4. Make sure Grease Monkey/Tamper Monkey is enabled.
+4. Make sure Tamper Monkey is enabled.
 5. Navigate to your collection on Bandcamp and a UI will show up.
 6. If you are downloading a large collection and not everything is downloading, try enabling throttling and experiment a bit with the right delay
