@@ -243,6 +243,19 @@ var throttleDownloadInterval = 5;
                             var albumInfos = parent.parentNode.querySelectorAll('.album-infos > li');
                             var rangeStart = parseInt(parent.querySelector('.download-range.range-start').value);
                             var rangeEnd = parseInt(parent.querySelector('.download-range.range-end').value);
+                            var rangeValid = true;
+                            if (rangeStart < 0 || rangeStart >= allLinks.length) {
+                                downloadRangeStart.value = null
+                                rangeValid = false
+                            }
+                            if (rangeEnd < 0 ||  rangeEnd >= allLinks.length) {
+                                downloadRangeEnd.value = null
+                                rangeValid = false
+                            }
+
+                            if (!rangeValid) {
+                                return
+                            }
                             var throttleIndex = 0;
                             for (let i = rangeStart; i <= rangeEnd && i < albumInfos.length; i++) {
                                 let link = albumInfos[i].querySelector('input[type="checkbox"]:enabled ~ a.download');
@@ -253,8 +266,22 @@ var throttleDownloadInterval = 5;
                                     throttleIndex++;
                                 }
                             }
+                            downloadNextRangeButton.style.display = "block"
+                            var downloadNextRangeButton = document.createElement('button')
+                            downloadNextRangeButton.innerText = 'Download next range'
+                            downloadNextRangeButton.style.display = "none"
+                            downloadNextRangeButton.style.marginBottom = "10px"
+                            downloadNextRangeButton.onclick = () => {
+                                var rangeStart = parseInt(parent.querySelector('.download-range.range-start').value);
+                                var rangeEnd = parseInt(parent.querySelector('.download-range.range-end').value);
+                                var limit = rangeEnd - rangeStart + 1
+                                parent.querySelector('.download-range.range-start').value = Math.min(rangeEnd + 1, allLinks.length - 1)
+                                parent.querySelector('.download-range.range-end').value = Math.min(rangeEnd + limit, allLinks.length - 1)
+                                document.querySelector('.download-range').click()
+                            }
                         }}})
             ]),
+
             element('div', {className: 'controls'}, [
                 element('label', {for: 'throttle-checkbox', textContent: 'Throttle downloads'}, []),
                 element('input', {type: 'checkbox', id: 'throttleCheckbox', 'name': 'throttle-checkbox', checked: throttleDownloads}, [], { onchange: { value(e) {

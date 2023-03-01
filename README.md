@@ -21,3 +21,7 @@ This chrome extension is needed for the scripts to work, so make sure you are us
 4. Make sure Tamper Monkey is enabled.
 5. Navigate to your collection on Bandcamp and a UI will show up.
 6. If you are downloading a large collection and not everything is downloading, try enabling throttling and experiment a bit with the right delay
+
+## Unzipping all folders after downloading
+[Mac OS](https://github.com/RyanBluth/Bandcamp-Greasy)
+[Windows](https://www.7-zip.org/)
