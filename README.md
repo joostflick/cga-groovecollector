@@ -1,5 +1,8 @@
-# Bandcamp Greasy
-A set of [Grease Monkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)/[Tamper Monkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) scripts which allow you to download your entire bandcamp collection.
+# CGA Groovecollector
+This project utilises [Bandcamp Greasy](https://github.com/RyanBluth/Bandcamp-Greasy) and adds functionality for certain usecases.
+A set of [Tamper Monkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) scripts which allow you to download your entire bandcamp collection.
+
+This chrome extension is needed for the scripts to work, so make sure you are using the google chrome browser.
 
 
 ## Usage
@@ -17,3 +20,4 @@ A set of [Grease Monkey](https://addons.mozilla.org/en-US/firefox/addon/greasemo
     - AIFF
 4. Make sure Grease Monkey/Tamper Monkey is enabled.
 5. Navigate to your collection on Bandcamp and a UI will show up.
+6. If you are downloading a large collection and not everything is downloading, try enabling throttling and experiment a bit with the right delay
